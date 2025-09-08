@@ -57,7 +57,7 @@ public class BaseFunctions
 	{
 		if (!isBrowserOpened) 
 		{
-			System.out.print("User directory is:"+System.getProperty("user.dir"));
+			// System.out.print("User directory is:"+System.getProperty("user.dir"));
 			System.out.print("Value of property:"+envConfig.getProperty("Browser"));
 			if (envConfig.getProperty("Browser").equalsIgnoreCase("Chrome")) 
 			{
