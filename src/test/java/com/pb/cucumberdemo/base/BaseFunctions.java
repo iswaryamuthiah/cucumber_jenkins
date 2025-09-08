@@ -61,8 +61,8 @@ public class BaseFunctions
 			System.out.print("Value of property:"+envConfig.getProperty("Browser"));
 			if (envConfig.getProperty("Browser").equalsIgnoreCase("Chrome")) 
 			{
-				ChromeOptions options = new ChromeOptions();
-				options.addArguments("start-maximized");
+				// ChromeOptions options = new ChromeOptions();
+				// options.addArguments("start-maximized");
 				
                 driver = new ChromeDriver();
 			}  
