@@ -67,7 +67,7 @@ public class BaseFunctions
 				// ✅ Use a unique user-data-dir to avoid session conflicts
 
 
-				options.addArguments("--headless=new");
+//				options.addArguments("--headless=new");
 				options.addArguments("--no-sandbox");
 				options.addArguments("--disable-dev-shm-usage");
 
