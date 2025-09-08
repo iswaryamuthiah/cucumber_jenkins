@@ -4,14 +4,13 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.time.Duration;
 import java.util.Properties;
-import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 
 import com.pb.cucumberdemo.utils.ConfigUtil;
@@ -57,12 +56,14 @@ public class BaseFunctions
 	{
 		if (!isBrowserOpened) 
 		{
+
 			// System.out.print("User directory is:"+System.getProperty("user.dir"));
 			System.out.print("Value of property:"+envConfig.getProperty("Browser"));
 			if (envConfig.getProperty("Browser").equalsIgnoreCase("Chrome")) 
 			{
 				// ChromeOptions options = new ChromeOptions();
 				// options.addArguments("start-maximized");
+
 				
                 driver = new ChromeDriver();
 			}  
@@ -71,9 +72,9 @@ public class BaseFunctions
 				driver=new EdgeDriver();
 			}
 		}	
-
-		driver.manage().timeouts().implicitlyWait(Long.parseLong(envConfig.getProperty("Implicit_Wait")), TimeUnit.SECONDS);
 		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+	
 	}		
 	
 	
