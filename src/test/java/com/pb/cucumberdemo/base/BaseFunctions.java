@@ -11,6 +11,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 
 import com.pb.cucumberdemo.utils.ConfigUtil;
@@ -61,10 +62,10 @@ public class BaseFunctions
 			System.out.print("Value of property:"+envConfig.getProperty("Browser"));
 			if (envConfig.getProperty("Browser").equalsIgnoreCase("Chrome")) 
 			{
-				// ChromeOptions options = new ChromeOptions();
+				ChromeOptions options = new ChromeOptions();
 				// options.addArguments("start-maximized");
 
-				
+				options.addArguments("--headless=new");
                 driver = new ChromeDriver();
 			}  
 			if(envConfig.getProperty("Browser").equalsIgnoreCase("Edge"))
