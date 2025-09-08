@@ -64,13 +64,15 @@ public class BaseFunctions
 			{
 				ChromeOptions options = new ChromeOptions();
 				// options.addArguments("start-maximized");
+				// ✅ Use a unique user-data-dir to avoid session conflicts
+
 
 				options.addArguments("--headless=new");
 				options.addArguments("--no-sandbox");
 				options.addArguments("--disable-dev-shm-usage");
 
 
-                driver = new ChromeDriver();
+                driver = new ChromeDriver(options);
 			}  
 			if(envConfig.getProperty("Browser").equalsIgnoreCase("Edge"))
 			{
